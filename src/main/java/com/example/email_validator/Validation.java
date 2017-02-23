@@ -22,15 +22,15 @@ public class Validation {
 		if (countChar(email, '@') != 1){
 			pass--;
 		}
-		else {
-			/*if @ sign is first character: FAIL*/
-			if (email.indexOf('@') == 0)
-				pass--;
+		
+		/*if @ sign is first character: FAIL*/
+		if (email.indexOf('@') == 0)
+			pass--;
 			
-			/*if @ sign is last character: FAIL*/
-			if (email.indexOf('@') == email.length() - 1)
-				pass--;
-		}
+		/*if @ sign is last character: FAIL*/
+		if (email.indexOf('@') == email.length() - 1)
+			pass--;
+		
 		if (countChar(email, '.') < 1)
 			pass--;
 		
