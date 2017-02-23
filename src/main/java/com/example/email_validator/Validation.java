@@ -15,13 +15,13 @@ public class Validation {
 	    return count;
 	}
 	
-	public static boolean validate(String email){
-		boolean pass = true;
+	public static int validate(String email){
+		int pass = 2;
 		
 		if (countChar(email, '@') != 1)
-			pass = false;
+			pass--;
 		if (countChar(email, '.') < 1)
-			pass = false;
+			pass--;
 		
 		return pass;
 		
