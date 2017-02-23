@@ -16,23 +16,23 @@ public class Validation {
 	}
 	
 	
-	public static boolean validate(String email){
-		boolean pass = true;
+	public static int validate(String email){
+		int pass = 4;
 		
 		if (countChar(email, '@') != 1){
-			pass = false;
+			pass--;
 		}
 		else {
 			/*if @ sign is first character: FAIL*/
 			if (email.indexOf('@') == 0)
-				pass = false;
+				pass--;
 			
 			/*if @ sign is last character: FAIL*/
 			if (email.indexOf('@') == email.length() - 1)
-				pass = false;
+				pass--;
 		}
 		if (countChar(email, '.') < 1)
-			pass = false;
+			pass--;
 		
 		return pass;
 	}
