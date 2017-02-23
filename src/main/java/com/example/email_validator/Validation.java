@@ -15,15 +15,25 @@ public class Validation {
 	    return count;
 	}
 	
+	
 	public static boolean validate(String email){
 		boolean pass = true;
 		
-		if (countChar(email, '@') != 1)
+		if (countChar(email, '@') != 1){
 			pass = false;
+		}
+		else {
+			/*if @ sign is first character: FAIL*/
+			if (email.indexOf('@') == 0)
+				pass = false;
+			
+			/*if @ sign is last character: FAIL*/
+			if (email.indexOf('@') == email.length() - 1)
+				pass = false;
+		}
 		if (countChar(email, '.') < 1)
 			pass = false;
 		
 		return pass;
-		
 	}
 }
